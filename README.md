@@ -12,3 +12,8 @@ Skyward SIS provides an option to export class rosters as CSV files.  The csv2cl
 1. In the `input` directory, place your Skyward class roster CSV files.
 1. Run `csv2clgp.ps1`.  Optionally, use `csv2clgp.bat`.  It will simply run the PowerShell script and wait for you to press a key before closing the window.
 1. View your generated PDF files in the `output` directory.
+
+# Technical Details
+csv2clgp is a PowerShell script that uses the [iText 7 .NET library](https://github.com/itext/itext7-dotnet) to fill the CLGP PDF.  iText 7 is made available under the AGPL.
+
+You must purchase a license to use the CLGP PDF, so it is not included with this script.
