@@ -115,6 +115,14 @@ Function Import-Csv-to-Clgp {
 	$doc.Close()
 }
 
+# Ensure input and output directories exist
+If (!(Test-Path "$PSScriptRoot\input")) {
+	New-Item -Path "$PSScriptRoot\input" -ItemType Directory
+}
+If (!(Test-Path "$PSScriptRoot\output")) {
+	New-Item -Path "$PSScriptRoot\output" -ItemType Directory
+}
+
 # Load iText 7 and its dependencies
 Add-Type -Path "$PSScriptRoot\lib\Common.Logging.Core.dll"
 Add-Type -Path "$PSScriptRoot\lib\Common.Logging.dll"
